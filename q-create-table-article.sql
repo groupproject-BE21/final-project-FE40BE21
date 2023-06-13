@@ -1,0 +1,9 @@
+CREATE TABLE `articles` (
+    `articles_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `title` VARCHAR(50) NOT NULL,
+    `content` TEXT NOT NULL,
+    `author_id` INT NOT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (`author_id`) REFERENCES `users`(`users_id`)
+)
